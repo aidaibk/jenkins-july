@@ -62,7 +62,7 @@ stage("Packer"){
 build job: 'hello-world', 
 parameters: [string(name: 'action', value: 'apply'),
  string(name: 'region', value: "${kaizen}"), 
- string(name: 'ami_name', value: "my_ami_${buildNumber}"), 
+ string(name: 'ami_name', value: "my_ami${buildNumber}"), 
  string(name: 'type', value: "${type}"), 
  string(name: 'az', value: "${kaizen}b"), 
  string(name: 'key', value: "${key}")]
