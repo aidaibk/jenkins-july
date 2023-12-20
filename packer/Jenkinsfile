@@ -23,20 +23,20 @@ properties([
         ])
 
 
-if (params.region = "us-east-1") {
+if (params.region == "us-east-1") {
     kaizen = "us-east-1"
 }
 
-else if (params.region = "us-east-2") {
+else if (params.region == "us-east-2") {
     kaizen = "us-east-2"
 }
 
-else if (params.region = "us-west-1") {
+else if (params.region == "us-west-1") {
     kaizen = "us-west-1"
 }
 
 else {
-    kaizen = "us-west-2"
+    kaizen == "us-west-2"
 }
 podTemplate(cloud: 'kubernetes', label: 'packer', showRawYaml: false, yaml: template){
 node("packer"){
@@ -61,3 +61,4 @@ stage("Packer"){
 }
 }
 }
+
